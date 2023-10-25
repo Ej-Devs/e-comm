@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="header.css">
+    <script src="header.js"></script>
+    <script src="cart.js"></script>
+    <title>Rich Men's Online Shop</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="carting.html">Cart</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="search-bar">
+                <label for="search">
+                    <i class="fas fa-search"></i>
+                </label>
+                <input type="text" id="search" name="search" placeholder="Search...">
+            </div>
+        </nav>
+        
+        <div class="header-content">
+            <h1>Rich Men's Online Shop</h1>
+        </div>
+        <a href="cart.html">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            <span class="cart-item-count">0</span>
+        </a>
+    </header>
+    <main>
+        <section class="product-list">
+            <div class="product">
+                <img src="images/OIP.jpg" alt="Product 1" class="img-responsive">
+                <h2>Product 1</h2>
+                <p>Product description goes here.</p>
+                <span class="price">$99.6</span>
+                <button onclick="addToCart('Product 1', 99.6)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="images/images (1).jpg" alt="Product 2" class="img-responsive">
+                <h2>Product 2</h2>
+                <p>Product description goes here.</p>
+                <span class="price">$79.99</span>
+                <button onclick="addToCart('Product 2', 79.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="images/images (2).jpg" alt="Product 3" class="img-responsive">
+                <h2>Product 3</h2>
+                <p>Product description goes here.</p>
+                <span class="price">$79.99</span>
+                <button onclick="addToCart('Product 3', 79.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="images/images (3).jpg" alt="Product 4" class="img-responsive">
+                <h2>Product 4</h2>
+                <p>Product description goes here.</p>
+                <span class="price">$79.99</span>
+                <button onclick="addToCart('Product 4', 79.99)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="images/images.jpg" alt="Product 5" class="img-responsive">
+                <h2>Product 5</h2>
+                <p>Product description goes here.</p>
+                <span class="price">$79.99</span>
+                <button onclick="addToCart('Product 5', 79.99)">Add to Cart</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h2>About Us</h2>
+                <p>Your go-to destination for quality products and great shopping experiences. Join us on our journey!</p>
+            </div>
+            <div class="footer-section links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h2>Contact Us</h2>
+                <p>Email: info@yourwebsite.com</p>
+                <p>Phone: (123) 456-7890</p>
+            </div>
+            <div class="footer-section social">
+                <h2>Follow Us</h2>
+                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2023 YourWebsite. All rights reserved.
+        </div>
+    </footer>
+    <div class="back-to-top" onclick="scrollToTop()">X</div>
+    <script>
+        function updateCartDisplay() {
+            const cartIcon = document.querySelector('.fa-shopping-cart');
+            const cartItemCount = document.querySelector('.cart-item-count');
+            const cartTotal = document.querySelector('.cart-total');
+            const cart = getCart();
+            
+            let total = 0;
+            let itemCount = 0;
+            
+            for (const item of cart) {
+                total += item.price * item.quantity;
+                itemCount += item.quantity;
+            }
+            
+            cartItemCount.textContent = itemCount;
+            cartTotal.textContent = '$' + total.toFixed(2);
+            
+            if (itemCount > 0) {
+                cartIcon.classList.add('cart-has-items');
+            } else {
+                cartIcon.classList.remove('cart-has-items');
+            }
+        }
+    </script>
+</body>
+</html>

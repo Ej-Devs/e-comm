@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>richclothingline Online Shop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles1.css">
+   
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="carting.html">Cart</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+           
+        </nav>
+        
+        <div class="header-content">
+            <h1>Rich Men's Online Shop</h1>
+        </div>
+        </a>
+    </header>
+    <main>
+        <h2>Contact Us</h2>
+        <p>If you have any questions or inquiries, please don't hesitate to get in touch with us:</p>
+
+        <p>Email: richclothingline@gmail.com</p>
+        <p>Phone: (123) 456-7890</p>
+        <p>Address: 123 Main Street, City, Country</p>
+
+        <h3>Contact Form</h3>
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" required><br>
+
+            <label for="message">Message:</label>
+            <textarea id="message" required></textarea><br>
+
+            <button type="submit">Submit</button>
+        </form>
+
+    </main>
+
+
+
+
+    
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h2>About Us</h2>
+                    <p>Your go-to destination for quality products and great shopping experiences. Join us on our journey!</p>
+                </div>
+                <div class="footer-section links">
+                    <h2>Quick Links</h2>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h2>Contact Us</h2>
+                    <p>Email: info@yourwebsite.com</p>
+                    <p>Phone: (123) 456-7890</p>
+                </div>
+                <div class="footer-section social">
+                    <h2>Follow Us</h2>
+                    <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2023 YourWebsite. All rights reserved.
+            </div>
+
+        </footer>
+
+
+        <script>
+       
+            const contactForm = document.getElementById("contactForm");
+    
+            contactForm.addEventListener("submit", function (event) {
+                const name = document.getElementById("name").value;
+                const email = document.getElementById("email").value;
+                const message = document.getElementById("message").value;
+    
+                if (!name || !email || !message) {
+                    alert("Please fill out all fields.");
+                    event.preventDefault();                 }
+            });
+        </script>
+
+
+
+
+</body>
+</html>

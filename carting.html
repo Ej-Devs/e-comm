@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Your Men's Online Shop</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="styles1.css">
+    
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="carting.html">Cart</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+          
+        </nav>
+        
+        <div class="header-content">
+            <h1>Rich Men's Online Shop</h1>
+        </div>
+        
+    </header>
+        <h2>Shopping Cart</h2>
+        
+       
+        <ul id="cart-items">
+        <!-- Cart items will be displayed here -->
+        </ul>
+
+       <p>Total: <span id="cart-total">$0.00</span></p>
+    </main>
+
+
+
+
+        <footer>
+    
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h2>About Us</h2>
+                    <p>Your go-to destination for quality products and great shopping experiences. Join us on our journey!</p>
+                </div>
+                <div class="footer-section links">
+                    <h2>Quick Links</h2>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h2>Contact Us</h2>
+                    <p>Email: info@yourwebsite.com</p>
+                    <p>Phone: (123) 456-7890</p>
+                </div>
+                <div class="footer-section social">
+                    <h2>Follow Us</h2>
+                    <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2023 YourWebsite. All rights reserved.
+            </div>
+            
+
+        </footer>
+        
+    
+
+   
+        <script>
+            const cart = [0]; // Initialize an empty cart array
+    
+            // Function to add an item to the cart
+            function addToCart(productName, productPrice) {
+                cart.push({ name: productName, price: productPrice });
+                displayCart(); // Update the cart display
+            }
+    
+            // Function to display the cart items and calculate the total price
+            function displayCart() {
+                const cartItems = document.getElementById("cart-items");
+                const cartTotal = document.getElementById("cart-total");
+                let cartHTML = "";
+                let total = 0;
+    
+                for (const item of cart) {
+                    cartHTML += `<li>${item.name} - $${item.price.toFixed(2)}</li>`;
+                    total += item.price;
+                }
+    
+                cartItems.innerHTML = cartHTML;
+                cartTotal.textContent = `$${total.toFixed(2)}`;
+            }
+        </script>
+</body>
+</html>

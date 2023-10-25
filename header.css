@@ -1,0 +1,163 @@
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+
+
+
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    margin: 3px 0;
+    border-radius: 3px;
+    transition: 0.4s;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+ 
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    opacity: 0;   
+     transform: translateY(-20px); }
+
+
+.header-content.animate {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 4.5s, transform 4.5s; 
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInOut 4s ease infinite; 
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+/* Navigation Styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+}
+
+.menu-toggle {
+    display: none; /* Hide the toggle button for larger screens */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 1em;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #007BFF;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+label[for="search"] {
+    margin-right: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+#search {
+    width: 200px;
+    padding: 0.5em;
+    border: none;
+    border-radius: 5px;
+    background-color: #444;
+    color: #fff;
+    font-size: 1em;
+}
+
+#search::placeholder {
+    color: #ccc;
+}
+
+#search:focus {
+    background-color: #555;
+}
+
+/* Media Query for Menu Toggle */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Show the toggle button for smaller screens */
+        cursor: pointer;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
